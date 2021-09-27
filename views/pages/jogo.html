@@ -1,11 +1,15 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
-<body onKeyDown="pegadirecao(event.keyCode);">
-
-<h2 align="center">Caio EduardoI</h2>
-
-<div id=principal></div>
-<script>
+ <head></head> 
+ <body onkeydown="pegadirecao(event.keyCode);"> 
+  <h2 align="center">Caio Eduardo</h2> 
+   <h3 id="outResp"></h3>
+     <div id="principal"></div> 
+   
+   <a href="mailto: ?subject=Convite para o jogo"><button>Compatilhar jogo</button></a>
+   
+   
+  <script>
     tabuleiro="<table align=center border=1>";
     for(x=0;x<10;x++){
         tabuleiro+="<tr>";
@@ -19,17 +23,22 @@
     mx=parseInt(Math.random()*10);
     my=parseInt(Math.random()*10);
     vivo=true;
+      
     function anda(){
         document.getElementById('td'+cobra[cobra.length-1][0]+'_'+cobra[cobra.length-1][1]).style.background="#ffffff";
         if(mx==cobra[cobra.length-1][0]&&my==cobra[cobra.length-1][1]){
-            mx=parseInt(Math.random()*10);
+         
+             mx=parseInt(Math.random()*10);
             my=parseInt(Math.random()*10);
             cobra[cobra.length]=[10,10];
         }
+
         for(x=cobra.length-1;x>0;x--){
             cobra[x][0]=cobra[x-1][0];
             cobra[x][1]=cobra[x-1][1];
         }
+      
+           
         if(direcao==0)cobra[0][1]--;
         if(direcao==1)cobra[0][0]--;
         if(direcao==2)cobra[0][1]++;
@@ -40,6 +49,7 @@
         document.getElementById('td'+mx+'_'+my).style.background="#ff3333";
         if(vivo)setTimeout('anda()',300);
         else alert('Fim de jogo');
+      
     }
     anda();
     function pegadirecao(tecla){
@@ -48,7 +58,15 @@
         if(tecla==38)direcao=1;
         if(tecla==39)direcao=2;
         if(tecla==40)direcao=3;
-    }
-</script>
-</body>
+      }
+      
+      
+     
+      
+    
+      
+ </script> 
+ </body>
 </html>
+
+  
